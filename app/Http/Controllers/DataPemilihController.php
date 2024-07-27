@@ -128,13 +128,13 @@ class DataPemilihController extends Controller
 
     public function suaraSementaraCalonKomandanResimen()
     {
-        $calons = Calon::all();
+        $calons = Calon::orderBy('no_urut', 'asc')->get();
         return view('admin.suaraSementaraCalonKomandanResimen.index', compact('calons'));
     }
 
     public function suaraSementaraCalonKetuaDemustar()
     {
-        $calons = Calon2::all();
+        $calons = Calon2::orderBy('no_urut', 'asc')->get();
         return view('admin.suaraSementaraCalonKetuaDemustar.index', compact('calons'));
     }
 }

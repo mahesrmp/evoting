@@ -14,7 +14,7 @@ class PemilihController extends Controller
 {
     public function indexKomandan()
     {
-        $dataCalonKomandan = DB::table('calons')->get();
+        $dataCalonKomandan = DB::table('calons')->orderBy("no_urut", "asc")->get();
         return view('pemilih.komandanResimen.index', compact('dataCalonKomandan'));
     }
 
@@ -60,7 +60,7 @@ class PemilihController extends Controller
 
     public function indexKetua()
     {
-        $dataCalonKetua = DB::table('calon2s')->get();
+        $dataCalonKetua = DB::table('calon2s')->orderBy("no_urut", "asc")->get();
         return view('pemilih.ketuaDemustar.index', compact('dataCalonKetua'));
     }
 

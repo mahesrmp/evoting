@@ -16,7 +16,7 @@ class Calon2Controller extends Controller
      */
     public function index()
     {
-        $dataCalon2 = DB::table('calon2s')->get();
+        $dataCalon2 = DB::table('calon2s')->orderBy("no_urut", "asc")->get();
         return view('admin.dataCalon2.index', compact('dataCalon2'));
     }
 

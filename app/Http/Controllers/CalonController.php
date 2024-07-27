@@ -16,7 +16,7 @@ class CalonController extends Controller
      */
     public function index()
     {
-        $dataCalon = DB::table('calons')->get();
+        $dataCalon = DB::table('calons')->orderBy("no_urut", "asc")->get();
         return view('admin.dataCalon.index', compact('dataCalon'));
     }
 
